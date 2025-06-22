@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhqh7qafv3qu8"]
+
+[ext_resource type="PackedScene" uid="uid://bl8tpqdge1sc8" path="res://Scene/Terrain.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dou8xgs4503i8" path="res://Script/spawn.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://djaxbm0qo30wc" path="res://Scene/zumbie.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dsgbd8bt25dm" path="res://Scene/control.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://qp2jkctxt54s" path="res://Assets/Sprite2D/Player.png" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://bp4maygouvbkc" path="res://Script/button.gd" id="6_7mycd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0, 0.678865, 0.738374, 1)
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="grade" type="Sprite2D" parent="."]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(173, 311)
+scale = Vector2(0.018, 0.018)
+texture = ExtResource("4_lquwl")
+flip_h = true
+
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2(1098, 137)
+script = ExtResource("2_0xm2m")
+enemy_scene = ExtResource("3_h2yge")
+quantidade_spawn = 50
+
+[node name="Slots" type="Node2D" parent="."]
+
+[node name="Slot1" type="Node2D" parent="Slots" groups=["slots"]]
+position = Vector2(262, 133)
+
+[node name="Slot2" type="Node2D" parent="Slots" groups=["slots"]]
+position = Vector2(272, 506)
+
+[node name="Slot3" type="Node2D" parent="Slots" groups=["slots"]]
+position = Vector2(729, 122)
+
+[node name="Control" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 997.0
+offset_top = 546.0
+offset_right = 1107.0
+offset_bottom = 619.0
+script = ExtResource("6_7mycd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 910.0
+offset_top = 3.0
+offset_right = 1083.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
+text = "Dia 1"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsgbd8bt25dm"]
+
+[ext_resource type="Script" uid="uid://wjtojwl21dr1" path="res://Script/card_1.gd" id="1_0ve60"]
+[ext_resource type="Texture2D" uid="uid://cyb2i623jlxf5" path="res://icon.svg" id="2_20xco"]
+[ext_resource type="PackedScene" uid="uid://dqp4b66aor6fv" path="res://Scene/torre.tscn" id="2_l7dqm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Cards" type="Node2D" parent="CanvasLayer"]
+
+[node name="card1" type="Node2D" parent="CanvasLayer/Cards"]
+position = Vector2(432, 577)
+script = ExtResource("1_0ve60")
+construction_scene = ExtResource("2_l7dqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Cards/card1"]
+texture = ExtResource("2_20xco")
+
+[node name="card2" type="Node2D" parent="CanvasLayer/Cards"]
+position = Vector2(749, 580)
+script = ExtResource("1_0ve60")
+construction_scene = ExtResource("2_l7dqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Cards/card2"]
+texture = ExtResource("2_20xco")
+
+[node name="card3" type="Node2D" parent="CanvasLayer/Cards"]
+position = Vector2(590, 580)
+script = ExtResource("1_0ve60")
+construction_scene = ExtResource("2_l7dqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Cards/card3"]
+texture = ExtResource("2_20xco")
