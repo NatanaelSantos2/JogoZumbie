@@ -26,7 +26,7 @@ texture = ExtResource("4_lquwl")
 flip_h = true
 
 [node name="Spawn" type="Node2D" parent="."]
-position = Vector2(1098, 137)
+position = Vector2(1405, 344)
 script = ExtResource("2_0xm2m")
 enemy_scene = ExtResource("3_h2yge")
 quantidade_spawn = 50

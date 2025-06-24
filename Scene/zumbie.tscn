@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cdd424fg7e3ce" path="res://Script/zumbie.gd" id="1_b8dsm"]
 [ext_resource type="Texture2D" uid="uid://dde60v4qmvgp2" path="res://Assets/Sprite2D/Zumb.png" id="2_n7sxw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6pm5u"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8dsm"]
 
 [node name="Zumbie" type="CharacterBody2D"]
 script = ExtResource("1_b8dsm")
 velocidade = 100.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6pm5u")
+shape = SubResource("CircleShape2D_b8dsm")
 
 [node name="NavigationAgent" type="NavigationAgent2D" parent="."]
 debug_enabled = true
@@ -20,6 +20,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_n7sxw")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

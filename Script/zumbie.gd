@@ -11,10 +11,6 @@ var dano: int = 5
 var ob: String = "construcoes"
 var pode_atacar: bool = true
 
-func _ready():
-	procurar_alvo_mais_proximo()
-	timer.wait_time = 2.0
-
 func _process(_delta):
 	if not is_instance_valid(alvo):
 		procurar_alvo_mais_proximo()
