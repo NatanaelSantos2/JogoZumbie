@@ -43,6 +43,10 @@ position = Vector2(272, 506)
 position = Vector2(729, 122)
 
 [node name="Control" parent="." instance=ExtResource("4_1bvp3")]
+offset_left = 40.0
+offset_top = -256.0
+offset_right = 40.0
+offset_bottom = -256.0
 
 [node name="Button" type="Button" parent="."]
 offset_left = 997.0
