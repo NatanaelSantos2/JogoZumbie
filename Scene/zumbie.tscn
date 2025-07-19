@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dde60v4qmvgp2" path="res://Assets/Sprite2D/Zumb.png" id="2_n7sxw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8dsm"]
+radius = 4.0
 
 [node name="Zumbie" type="CharacterBody2D" groups=["zumbis"]]
 script = ExtResource("1_b8dsm")
@@ -16,7 +17,7 @@ shape = SubResource("CircleShape2D_b8dsm")
 debug_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.01, 0.01)
 texture = ExtResource("2_n7sxw")
 
 [node name="Timer" type="Timer" parent="."]

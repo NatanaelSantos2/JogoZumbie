@@ -17,7 +17,8 @@ grow_vertical = 2
 [node name="Cards" type="Node2D" parent="CanvasLayer"]
 
 [node name="card1" type="Node2D" parent="CanvasLayer/Cards"]
-position = Vector2(432, 577)
+position = Vector2(97, 157)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_0ve60")
 construction_scene = ExtResource("2_l7dqm")
 
@@ -25,7 +26,8 @@ construction_scene = ExtResource("2_l7dqm")
 texture = ExtResource("2_20xco")
 
 [node name="card2" type="Node2D" parent="CanvasLayer/Cards"]
-position = Vector2(749, 580)
+position = Vector2(145, 157)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_0ve60")
 construction_scene = ExtResource("2_l7dqm")
 
@@ -33,7 +35,8 @@ construction_scene = ExtResource("2_l7dqm")
 texture = ExtResource("2_20xco")
 
 [node name="card3" type="Node2D" parent="CanvasLayer/Cards"]
-position = Vector2(590, 580)
+position = Vector2(192, 157)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_0ve60")
 construction_scene = ExtResource("2_l7dqm")
 

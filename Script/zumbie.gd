@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 @export var velocidade: float = 10.0
-@export var distancia_ataque: float = 100.0
+@export var distancia_ataque: float = 25
 
-@onready var agente_navegacao: NavigationAgent2D = $NavigationAgent
 @onready var alvo: Node2D
 @onready var timer: Timer = $Timer
 
@@ -17,18 +16,16 @@ func _process(_delta):
 		procurar_alvo_mais_proximo()
 		return
 
-	agente_navegacao.target_position = alvo.global_position
 	var dist = global_position.distance_to(alvo.global_position)
 
 	if dist <= distancia_ataque:
 		velocity = Vector2.ZERO
 		if pode_atacar:
 			atacar_alvo()
-		return
-
-	var direcao = (agente_navegacao.get_next_path_position() - global_position).normalized()
-	velocity = direcao * velocidade
-	move_and_slide()
+	else:
+		var direcao = (alvo.global_position - global_position).normalized()
+		velocity = direcao * velocidade
+		move_and_slide()
 
 func procurar_alvo_mais_proximo():
 	var mais_a_frente: Node2D = null
@@ -42,9 +39,6 @@ func procurar_alvo_mais_proximo():
 				mais_a_frente = c
 
 	alvo = mais_a_frente
-	
-	if alvo:
-		agente_navegacao.target_position = alvo.global_position
 
 func atacar_alvo():
 	if alvo and alvo.has_method("tomar_dano"):

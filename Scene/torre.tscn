@@ -4,20 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://cwai2ql7y5apu" path="res://Assets/Sprite2D/torre.png" id="2_s5jug"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7hvhl"]
-radius = 179.179
+radius = 35.0
 
 [node name="Torre" type="Node2D" groups=["construcoes"]]
 script = ExtResource("1_7hvhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("2_s5jug")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -22.0
-offset_top = -100.0
+offset_left = -18.0
+offset_top = -29.0
 offset_right = 18.0
-offset_bottom = -77.0
+offset_bottom = -6.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
