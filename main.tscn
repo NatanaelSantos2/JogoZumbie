@@ -1,29 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhqh7qafv3qu8"]
+[gd_scene load_steps=9 format=3 uid="uid://dhqh7qafv3qu8"]
 
 [ext_resource type="Script" uid="uid://dou8xgs4503i8" path="res://Script/spawn.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://djaxbm0qo30wc" path="res://Scene/zumbie.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dsgbd8bt25dm" path="res://Scene/control.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://qp2jkctxt54s" path="res://Assets/Sprite2D/Player.png" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://bp4maygouvbkc" path="res://Script/button.gd" id="6_7mycd"]
-[ext_resource type="Texture2D" uid="uid://dm3aj22utks6i" path="res://Teste.png" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://dhne8ty16axut" path="res://Estacionamento.png" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://caly4fpa5ovas" path="res://Grid.png" id="7_272bh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
 bg_color = Color(0, 0.678865, 0.738374, 1)
 
 [node name="Main" type="Node2D"]
 
-[node name="Teste" type="Sprite2D" parent="."]
-position = Vector2(308, 29)
-scale = Vector2(4.425, 4.425)
-texture = ExtResource("7_272bh")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("6_272bh")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(160, 90)
-scale = Vector2(1.1, 1.1)
 
 [node name="Player" type="Sprite2D" parent="."]
-position = Vector2(44, 89)
-scale = Vector2(0.002, 0.002)
+position = Vector2(31, 99)
+scale = Vector2(0.004, 0.004)
 texture = ExtResource("4_lquwl")
 flip_h = true
 
@@ -36,13 +35,25 @@ quantidade_spawn = 50
 [node name="Slots" type="Node2D" parent="."]
 
 [node name="Slot1" type="Node2D" parent="Slots" groups=["slots"]]
-position = Vector2(119, 33)
+position = Vector2(79, 34)
 
 [node name="Slot2" type="Node2D" parent="Slots" groups=["slots"]]
-position = Vector2(118, 112)
+position = Vector2(78, 60)
 
 [node name="Slot3" type="Node2D" parent="Slots" groups=["slots"]]
-position = Vector2(207, 45)
+position = Vector2(79, 84)
+
+[node name="Slot4" type="Node2D" parent="Slots" groups=["slots"]]
+position = Vector2(78, 110)
+
+[node name="Slot5" type="Node2D" parent="Slots" groups=["slots"]]
+position = Vector2(78, 133)
+
+[node name="Slot6" type="Node2D" parent="Slots" groups=["slots"]]
+position = Vector2(104, 34)
+
+[node name="Slot7" type="Node2D" parent="Slots"]
+position = Vector2(131, 33)
 
 [node name="Control" parent="." instance=ExtResource("4_1bvp3")]
 offset_left = 40.0
@@ -51,18 +62,24 @@ offset_right = 40.0
 offset_bottom = -256.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 276.0
-offset_top = 156.0
-offset_right = 311.0
-offset_bottom = 173.0
+z_index = 2
+offset_left = 280.0
+offset_top = 134.0
+offset_right = 315.0
+offset_bottom = 151.0
 script = ExtResource("6_7mycd")
 
 [node name="Label" type="Label" parent="."]
+z_index = 2
 offset_left = 277.0
 offset_top = 2.0
 offset_right = 316.0
 offset_bottom = 25.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
 text = "Dia 1"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(160, 67)
+texture = ExtResource("7_272bh")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

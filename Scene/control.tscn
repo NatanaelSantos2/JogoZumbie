@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsgbd8bt25dm"]
+[gd_scene load_steps=5 format=3 uid="uid://dsgbd8bt25dm"]
 
 [ext_resource type="Script" uid="uid://wjtojwl21dr1" path="res://Script/card_1.gd" id="1_0ve60"]
 [ext_resource type="Texture2D" uid="uid://cyb2i623jlxf5" path="res://icon.svg" id="2_20xco"]
 [ext_resource type="PackedScene" uid="uid://dqp4b66aor6fv" path="res://Scene/torre.tscn" id="2_l7dqm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7dqm"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 0.580392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,11 +22,21 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l7dqm")
+
 [node name="Cards" type="Node2D" parent="CanvasLayer"]
 
 [node name="card1" type="Node2D" parent="CanvasLayer/Cards"]
-position = Vector2(97, 157)
-scale = Vector2(0.3, 0.3)
+position = Vector2(104, 161)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_0ve60")
 construction_scene = ExtResource("2_l7dqm")
 
@@ -26,8 +44,8 @@ construction_scene = ExtResource("2_l7dqm")
 texture = ExtResource("2_20xco")
 
 [node name="card2" type="Node2D" parent="CanvasLayer/Cards"]
-position = Vector2(145, 157)
-scale = Vector2(0.3, 0.3)
+position = Vector2(152, 161)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_0ve60")
 construction_scene = ExtResource("2_l7dqm")
 
@@ -35,8 +53,8 @@ construction_scene = ExtResource("2_l7dqm")
 texture = ExtResource("2_20xco")
 
 [node name="card3" type="Node2D" parent="CanvasLayer/Cards"]
-position = Vector2(192, 157)
-scale = Vector2(0.3, 0.3)
+position = Vector2(199, 161)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_0ve60")
 construction_scene = ExtResource("2_l7dqm")
 

@@ -4,7 +4,7 @@ extends Node2D
 @onready var spawn: Node2D = $"."
 
 @export var quantidade_spawn: int = 5
-@export var raio_spawn: float = 10.0 
+@export var raio_spawn: float = 90.0 
 
 func _ready():
 	spawn_enemy()

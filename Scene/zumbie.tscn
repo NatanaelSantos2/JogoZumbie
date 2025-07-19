@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://djaxbm0qo30wc"]
 
 [ext_resource type="Script" uid="uid://cdd424fg7e3ce" path="res://Script/zumbie.gd" id="1_b8dsm"]
-[ext_resource type="Texture2D" uid="uid://dde60v4qmvgp2" path="res://Assets/Sprite2D/Zumb.png" id="2_n7sxw"]
+[ext_resource type="Texture2D" uid="uid://d2kk0hh2rb2oy" path="res://Sprite-0005.png" id="2_b8dsm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8dsm"]
-radius = 4.0
+radius = 5.0
 
 [node name="Zumbie" type="CharacterBody2D" groups=["zumbis"]]
+z_index = 1
 script = ExtResource("1_b8dsm")
-velocidade = 100.0
+velocidade = 50.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b8dsm")
@@ -17,8 +18,8 @@ shape = SubResource("CircleShape2D_b8dsm")
 debug_enabled = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("2_n7sxw")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_b8dsm")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
