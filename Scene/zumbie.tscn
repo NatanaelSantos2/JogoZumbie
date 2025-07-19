@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8dsm"]
 
-[node name="Zumbie" type="CharacterBody2D"]
+[node name="Zumbie" type="CharacterBody2D" groups=["zumbis"]]
 script = ExtResource("1_b8dsm")
 velocidade = 100.0
 

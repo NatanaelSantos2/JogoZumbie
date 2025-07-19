@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqp4b66aor6fv"]
+[gd_scene load_steps=4 format=3 uid="uid://dqp4b66aor6fv"]
 
 [ext_resource type="Script" uid="uid://blxdbe425l2s6" path="res://Script/torre.gd" id="1_7hvhl"]
 [ext_resource type="Texture2D" uid="uid://cwai2ql7y5apu" path="res://Assets/Sprite2D/torre.png" id="2_s5jug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7hvhl"]
+radius = 179.179
 
 [node name="Torre" type="Node2D" groups=["construcoes"]]
 script = ExtResource("1_7hvhl")
@@ -15,3 +18,13 @@ offset_left = -22.0
 offset_top = -100.0
 offset_right = 18.0
 offset_bottom = -77.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7hvhl")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

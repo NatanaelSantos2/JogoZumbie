@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var alvo: Node2D
 @onready var timer: Timer = $Timer
 
+var vida: int = 100
 var dano: int = 5
 var ob: String = "construcoes"
 var pode_atacar: bool = true
@@ -50,6 +51,12 @@ func atacar_alvo():
 		alvo.tomar_dano(dano)
 		pode_atacar = false
 		timer.start()
+
+func receber_dano(valor: int):
+	vida -= valor
+	print("Zumbi levou dano. Vida restante:", vida)
+	if vida <= 0:
+		queue_free()
 
 func _on_timer_timeout():
 	pode_atacar = true
