@@ -10,6 +10,10 @@ var vida: int = 100
 var dano: int = 5
 var ob: String = "construcoes"
 var pode_atacar: bool = true
+@onready var animated: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	animated.play("run")
 
 func _process(_delta):
 	if not is_instance_valid(alvo):

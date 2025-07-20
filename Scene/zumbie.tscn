@@ -1,10 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://djaxbm0qo30wc"]
+[gd_scene load_steps=11 format=3 uid="uid://djaxbm0qo30wc"]
 
 [ext_resource type="Script" uid="uid://cdd424fg7e3ce" path="res://Script/zumbie.gd" id="1_b8dsm"]
-[ext_resource type="Texture2D" uid="uid://d2kk0hh2rb2oy" path="res://Sprite-0005.png" id="2_b8dsm"]
+[ext_resource type="Texture2D" uid="uid://cy0mu8lt8rr3o" path="res://Assets/Sprite2D/zumbie/Zb1.png" id="2_s6wlc"]
+[ext_resource type="Texture2D" uid="uid://nfxrw2tsus7f" path="res://Assets/Sprite2D/zumbie/Zb2.png" id="3_buyk5"]
+[ext_resource type="Texture2D" uid="uid://ssabhfuifh54" path="res://Assets/Sprite2D/zumbie/Zb3.png" id="4_p84nv"]
+[ext_resource type="Texture2D" uid="uid://cuhcu24kii6ac" path="res://Assets/Sprite2D/zumbie/Zb4.png" id="5_cwiea"]
+[ext_resource type="Texture2D" uid="uid://bqhdv8h1qetw7" path="res://Assets/Sprite2D/zumbie/Zb5.png" id="6_rtywg"]
+[ext_resource type="Texture2D" uid="uid://bn48c4xfpia1b" path="res://Assets/Sprite2D/zumbie/Zb6.png" id="7_c11of"]
+[ext_resource type="Texture2D" uid="uid://d2wl0ino7j7v5" path="res://Assets/Sprite2D/zumbie/Zb7.png" id="8_avb84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8dsm"]
-radius = 5.0
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oqo3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s6wlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_buyk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p84nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cwiea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rtywg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c11of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_avb84")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [node name="Zumbie" type="CharacterBody2D" groups=["zumbis"]]
 z_index = 1
@@ -14,15 +49,16 @@ velocidade = 50.0
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b8dsm")
 
-[node name="NavigationAgent" type="NavigationAgent2D" parent="."]
-debug_enabled = true
-
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_b8dsm")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oqo3x")
+animation = &"run"
+flip_h = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
