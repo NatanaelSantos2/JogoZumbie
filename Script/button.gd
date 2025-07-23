@@ -1,4 +1,6 @@
 extends Button
 
+@onready var turn_manager: Node2D = $"../TurnManager"
+
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	turn_manager.iniciar_turno()

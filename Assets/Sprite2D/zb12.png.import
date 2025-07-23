@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwai2ql7y5apu"
-path="res://.godot/imported/torre.png-964ec7b7abc71e740f756e141923e52e.ctex"
+uid="uid://hurpmo88b8dt"
+path="res://.godot/imported/zb12.png-67ce0a111d611cc34c457a68ffd2cc0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite2D/torre.png"
-dest_files=["res://.godot/imported/torre.png-964ec7b7abc71e740f756e141923e52e.ctex"]
+source_file="res://Assets/Sprite2D/zb12.png"
+dest_files=["res://.godot/imported/zb12.png-67ce0a111d611cc34c457a68ffd2cc0b.ctex"]
 
 [params]
 

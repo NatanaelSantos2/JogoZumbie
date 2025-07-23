@@ -5,7 +5,7 @@ extends Node2D
 
 @export var dano: int = 50
 @export var max_zumbis_afetados: int = 1
-@onready var area_dano: Area2D = $Area2D
+@onready var area_dano: Area2D = $AreaDanoZB
 
 func _ready() -> void:
 	label.text = str(vida)

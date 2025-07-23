@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhqh7qafv3qu8"]
+[gd_scene load_steps=11 format=3 uid="uid://dhqh7qafv3qu8"]
 
 [ext_resource type="Script" uid="uid://dou8xgs4503i8" path="res://Script/spawn.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://duatyfqdnlr5x" path="res://Scene/Player/player.tscn" id="2_272bh"]
+[ext_resource type="Script" uid="uid://cc7nis1ltpxlh" path="res://Script/TurnManager/turn_manager.gd" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://djaxbm0qo30wc" path="res://Scene/zumbie.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dsgbd8bt25dm" path="res://Scene/control.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bp4maygouvbkc" path="res://Script/button.gd" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dhne8ty16axut" path="res://Assets/Sprite2D/Estacionamento.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://caly4fpa5ovas" path="res://Assets/Sprite2D/Grid.png" id="7_272bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(105, 62)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
 bg_color = Color(0, 0.678865, 0.738374, 1)
@@ -20,14 +24,31 @@ texture = ExtResource("6_272bh")
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(160, 90)
 
-[node name="Player2" parent="." instance=ExtResource("2_272bh")]
+[node name="Player" parent="." instance=ExtResource("2_272bh")]
 position = Vector2(27, 81)
 
-[node name="Spawn" type="Node2D" parent="."]
+[node name="TurnManager" type="Node2D" parent="."]
+script = ExtResource("3_5vw27")
+
+[node name="ButtonStartTurn" type="Button" parent="."]
+z_index = 2
+offset_left = 280.0
+offset_top = 134.0
+offset_right = 315.0
+offset_bottom = 151.0
+script = ExtResource("6_7mycd")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(311, 92)
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-46, -9)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="ZumbiSpawner" type="Node2D" parent="."]
 position = Vector2(311, 92)
 script = ExtResource("2_0xm2m")
-enemy_scene = ExtResource("3_h2yge")
-quantidade_spawn = 50
+cena_zumbi = ExtResource("3_h2yge")
 
 [node name="Slots" type="Node2D" parent="."]
 
@@ -58,14 +79,6 @@ offset_top = -256.0
 offset_right = 40.0
 offset_bottom = -256.0
 
-[node name="Button" type="Button" parent="."]
-z_index = 2
-offset_left = 280.0
-offset_top = 134.0
-offset_right = 315.0
-offset_bottom = 151.0
-script = ExtResource("6_7mycd")
-
 [node name="Label" type="Label" parent="."]
 z_index = 2
 offset_left = 277.0
@@ -80,4 +93,4 @@ modulate = Color(1, 1, 1, 0.286275)
 position = Vector2(160, 67)
 texture = ExtResource("7_272bh")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="ButtonStartTurn" to="ButtonStartTurn" method="_on_pressed"]

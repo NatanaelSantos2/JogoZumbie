@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://duatyfqdnlr5x"]
+[gd_scene load_steps=9 format=3 uid="uid://duatyfqdnlr5x"]
 
 [ext_resource type="Script" uid="uid://bbfrovww5koie" path="res://Script/Player/player.gd" id="1_88wa8"]
+[ext_resource type="PackedScene" uid="uid://chtqxsm68tc30" path="res://Scene/Player/balla.tscn" id="2_ewflj"]
 [ext_resource type="Texture2D" uid="uid://y1glvwf1srmc" path="res://Assets/Sprite2D/Player/player1.png" id="2_jd8gp"]
 [ext_resource type="Texture2D" uid="uid://1ot4cuedx644" path="res://Assets/Sprite2D/Player/player2.png" id="3_ewflj"]
 [ext_resource type="Texture2D" uid="uid://ckoj1io1x1juh" path="res://Assets/Sprite2D/Player/player3.png" id="4_2x3rd"]
@@ -30,6 +31,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_88wa8")
+BULLET = ExtResource("2_ewflj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a1qst")
@@ -40,3 +42,10 @@ shape = SubResource("RectangleShape2D_a1qst")
 sprite_frames = SubResource("SpriteFrames_b00hk")
 animation = &"new_animation"
 frame_progress = 0.763024
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(168, 0)
+
+[node name="Timer" type="Timer" parent="RayCast2D"]
+
+[connection signal="timeout" from="RayCast2D/Timer" to="." method="_on_timer_timeout"]

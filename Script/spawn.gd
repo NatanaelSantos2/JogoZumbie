@@ -1,22 +1,20 @@
 extends Node2D
 
-@export var enemy_scene: PackedScene
-@onready var spawn: Node2D = $"."
+@export var cena_zumbi: PackedScene
+@onready var area_spawn: Area2D = $"../Area2D"
 
-@export var quantidade_spawn: int = 5
-@export var raio_spawn: float = 90.0 
+func spawnar_zumbis(qtd: int, vida: int, forca: int):
+	var shape = area_spawn.get_node("Collision").shape as RectangleShape2D
+	var extents = shape.extents
+	var origin = area_spawn.global_position
 
-func _ready():
-	spawn_enemy()
+	for i in range(qtd):
+		var zumbi = cena_zumbi.instantiate()
+		zumbi.vida = vida
+		zumbi.forca = forca
 
-func spawn_enemy():
-	for i in quantidade_spawn:
-		var enemy_instance = enemy_scene.instantiate()
-		
-		var angle = randf() * TAU  # TAU = 2 * PI
-		var radius = randf() * raio_spawn
-		var offset = Vector2(cos(angle), sin(angle)) * radius
-		
-		enemy_instance.position = offset
-		add_child(enemy_instance)
-		print(enemy_instance)
+		var offset_x = randf_range(-extents.x, extents.x)
+		var offset_y = randf_range(-extents.y, extents.y)
+		zumbi.global_position = origin + Vector2(offset_x, offset_y)
+
+		add_child(zumbi)

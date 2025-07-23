@@ -1,0 +1,12 @@
+{
+  "1": {
+	"quantidade": 5,
+	"vida": 100,
+	"forca": 10
+  },
+  "2": {
+	"quantidade": 10,
+	"vida": 120,
+	"forca": 15
+  }
+}

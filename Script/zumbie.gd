@@ -6,8 +6,8 @@ extends CharacterBody2D
 @onready var alvo: Node2D
 @onready var timer: Timer = $Timer
 
-var vida: int = 100
-var dano: int = 5
+var vida: int
+var forca: int
 var ob: String = "construcoes"
 var pode_atacar: bool = true
 @onready var animated: AnimatedSprite2D = $AnimatedSprite2D
@@ -46,7 +46,7 @@ func procurar_alvo_mais_proximo():
 
 func atacar_alvo():
 	if alvo and alvo.has_method("tomar_dano"):
-		alvo.tomar_dano(dano)
+		alvo.tomar_dano(forca)
 		pode_atacar = false
 		timer.start()
 
