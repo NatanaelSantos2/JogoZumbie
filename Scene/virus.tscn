@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://djaxbm0qo30wc"]
+
+[ext_resource type="Script" uid="uid://cdd424fg7e3ce" path="res://Script/zumbie.gd" id="1_b8dsm"]
+[ext_resource type="Texture2D" uid="uid://d1psqbkctngai" path="res://Assets/Sprite2D/virus/virus1.png" id="2_70hja"]
+[ext_resource type="Texture2D" uid="uid://hao36bfdgh53" path="res://Assets/Sprite2D/virus/virus2.png" id="3_1wsbi"]
+[ext_resource type="Texture2D" uid="uid://b3kjgxxo0lpa5" path="res://Assets/Sprite2D/virus/virus3.png" id="4_jr3ga"]
+[ext_resource type="Texture2D" uid="uid://cwoj1smwk5fmh" path="res://Assets/Sprite2D/virus/virus4.png" id="5_s6wlc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8dsm"]
+radius = 26.6667
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oqo3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_70hja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1wsbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jr3ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s6wlc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="virus" type="CharacterBody2D" groups=["zumbis"]]
+z_index = 1
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_b8dsm")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b8dsm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oqo3x")
+animation = &"run"
+flip_h = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

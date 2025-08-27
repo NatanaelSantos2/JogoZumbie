@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bbfrovww5koie" path="res://Script/Player/player.gd" id="1_88wa8"]
 [ext_resource type="PackedScene" uid="uid://chtqxsm68tc30" path="res://Scene/Player/balla.tscn" id="2_ewflj"]
-[ext_resource type="Texture2D" uid="uid://y1glvwf1srmc" path="res://Assets/Sprite2D/Player/player1.png" id="2_jd8gp"]
-[ext_resource type="Texture2D" uid="uid://1ot4cuedx644" path="res://Assets/Sprite2D/Player/player2.png" id="3_ewflj"]
-[ext_resource type="Texture2D" uid="uid://ckoj1io1x1juh" path="res://Assets/Sprite2D/Player/player3.png" id="4_2x3rd"]
-[ext_resource type="Texture2D" uid="uid://pyc6do6vypyh" path="res://Assets/Sprite2D/Player/player4.png" id="5_usf6g"]
+[ext_resource type="Texture2D" uid="uid://be60j056bsutw" path="res://Assets/Sprite2D/Player/globulos-brancos1.png" id="3_jd8gp"]
+[ext_resource type="Texture2D" uid="uid://435kco2g8did" path="res://Assets/Sprite2D/Player/globulos-brancos2.png" id="4_ewflj"]
+[ext_resource type="Texture2D" uid="uid://j6mh0gywel83" path="res://Assets/Sprite2D/Player/globulos-brancos3.png" id="5_2x3rd"]
+[ext_resource type="Texture2D" uid="uid://bpqoyjywv04y8" path="res://Assets/Sprite2D/Player/globulos-brancos.png" id="6_usf6g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1qst"]
 
@@ -13,16 +13,16 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jd8gp")
+"texture": ExtResource("3_jd8gp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ewflj")
+"texture": ExtResource("4_ewflj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2x3rd")
+"texture": ExtResource("5_2x3rd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_usf6g")
+"texture": ExtResource("6_usf6g")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -41,7 +41,6 @@ shape = SubResource("RectangleShape2D_a1qst")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b00hk")
 animation = &"new_animation"
-frame_progress = 0.763024
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(168, 0)

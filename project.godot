@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="ataqueZumbie"
+config/name="imunidade"
 run/main_scene="uid://dhqh7qafv3qu8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var vida: int = 1000
+@export var vida: int = 100
 @onready var label: Label = $Label
 
 @export var dano: int = 50

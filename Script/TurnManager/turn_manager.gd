@@ -2,6 +2,7 @@ extends Node
 
 @onready var spawner: Node2D = $"../ZumbiSpawner"
 @onready var botao_turno: Button = $"../ButtonStartTurn"
+@onready var label: Label = $"../Label"
 
 var dados_turnos = {}
 var turno_atual = 1
@@ -27,6 +28,7 @@ func iniciar_planejamento():
 	fase_atual = FaseTurno.PLANEJAMENTO
 	botao_turno.disabled = false
 	print("🎴 Planejamento do turno ", turno_atual)
+	label.text = "Dia " + str(turno_atual)
 
 func iniciar_turno():
 	if fase_atual != FaseTurno.PLANEJAMENTO or turno_em_andamento:

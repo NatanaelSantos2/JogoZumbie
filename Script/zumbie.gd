@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocidade: float = 10.0
+@export var velocidade: float = 50
 @export var distancia_ataque: float = 25
 
 @onready var alvo: Node2D

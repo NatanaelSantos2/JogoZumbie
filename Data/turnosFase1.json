@@ -8,5 +8,45 @@
 	"quantidade": 10,
 	"vida": 120,
 	"forca": 15
+  },
+  "3": {
+	"quantidade": 15,
+	"vida": 100,
+	"forca": 10
+  },
+  "4": {
+	"quantidade": 20,
+	"vida": 120,
+	"forca": 15
+  },
+  "5": {
+	"quantidade": 25,
+	"vida": 100,
+	"forca": 10
+  },
+  "6": {
+	"quantidade": 30,
+	"vida": 120,
+	"forca": 15
+  },
+  "7": {
+	"quantidade": 35,
+	"vida": 100,
+	"forca": 10
+  },
+  "8": {
+	"quantidade": 40,
+	"vida": 120,
+	"forca": 15
+  },
+  "9": {
+	"quantidade": 45,
+	"vida": 100,
+	"forca": 10
+  },
+  "10": {
+	"quantidade": 50,
+	"vida": 120,
+	"forca": 15
   }
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2kk0hh2rb2oy"
-path="res://.godot/imported/zumbieNPC.png-324e94eba903df09429fff609a0a75c3.ctex"
+uid="uid://be60j056bsutw"
+path="res://.godot/imported/globulos-brancos1.png-65550e1fe6dcefd2dee6275d44bd16b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite2D/zumbieNPC.png"
-dest_files=["res://.godot/imported/zumbieNPC.png-324e94eba903df09429fff609a0a75c3.ctex"]
+source_file="res://Assets/Sprite2D/Player/globulos-brancos1.png"
+dest_files=["res://.godot/imported/globulos-brancos1.png-65550e1fe6dcefd2dee6275d44bd16b4.ctex"]
 
 [params]
 

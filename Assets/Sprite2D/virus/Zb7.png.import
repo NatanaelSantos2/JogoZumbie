@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuhcu24kii6ac"
-path="res://.godot/imported/Zb4.png-3b7cb6af5c92123f28e967cc616d249a.ctex"
+uid="uid://d2wl0ino7j7v5"
+path="res://.godot/imported/Zb7.png-a8b0234ed22d9afede145d10a2134204.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite2D/zumbie/Zb4.png"
-dest_files=["res://.godot/imported/Zb4.png-3b7cb6af5c92123f28e967cc616d249a.ctex"]
+source_file="res://Assets/Sprite2D/virus/Zb7.png"
+dest_files=["res://.godot/imported/Zb7.png-a8b0234ed22d9afede145d10a2134204.ctex"]
 
 [params]
 
