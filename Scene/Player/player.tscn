@@ -29,7 +29,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["construcoes"]]
 script = ExtResource("1_88wa8")
 BULLET = ExtResource("2_ewflj")
 

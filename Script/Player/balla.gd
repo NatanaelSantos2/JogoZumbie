@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 600.0
-@export var dano: int = 100
+@export var dano: int = 10
 
 func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta

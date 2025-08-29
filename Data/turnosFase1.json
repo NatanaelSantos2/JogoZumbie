@@ -1,52 +1,102 @@
 {
-  "1": {
-	"quantidade": 5,
-	"vida": 100,
-	"forca": 10
-  },
-  "2": {
-	"quantidade": 10,
-	"vida": 120,
-	"forca": 15
-  },
-  "3": {
-	"quantidade": 15,
-	"vida": 100,
-	"forca": 10
-  },
-  "4": {
-	"quantidade": 20,
-	"vida": 120,
-	"forca": 15
-  },
-  "5": {
-	"quantidade": 25,
-	"vida": 100,
-	"forca": 10
-  },
-  "6": {
-	"quantidade": 30,
-	"vida": 120,
-	"forca": 15
-  },
-  "7": {
-	"quantidade": 35,
-	"vida": 100,
-	"forca": 10
-  },
-  "8": {
-	"quantidade": 40,
-	"vida": 120,
-	"forca": 15
-  },
-  "9": {
-	"quantidade": 45,
-	"vida": 100,
-	"forca": 10
-  },
-  "10": {
-	"quantidade": 50,
-	"vida": 120,
-	"forca": 15
-  }
+	"1": {
+		"quantidade": 5,
+		"vida": 100,
+		"forca": 1
+	},
+	"2": {
+		"quantidade": 10,
+		"vida": 120,
+		"forca": 10
+	},
+	"3": {
+		"quantidade": 15,
+		"vida": 100,
+		"forca": 15
+	},
+	"4": {
+		"quantidade": 20,
+		"vida": 120,
+		"forca": 15
+	},
+	"5": {
+		"quantidade": 25,
+		"vida": 100,
+		"forca": 10
+	},
+	"6": {
+		"quantidade": 30,
+		"vida": 120,
+		"forca": 15
+	},
+	"7": {
+		"quantidade": 35,
+		"vida": 100,
+		"forca": 10
+	},
+	"8": {
+		"quantidade": 40,
+		"vida": 120,
+		"forca": 15
+	},
+	"9": {
+		"quantidade": 45,
+		"vida": 100,
+		"forca": 10
+	},
+	"10": {
+		"quantidade": 50,
+		"vida": 120,
+		"forca": 15
+	},
+	"11": {
+		"quantidade": 5,
+		"vida": 100,
+		"forca": 10
+	},
+	"12": {
+		"quantidade": 10,
+		"vida": 120,
+		"forca": 15
+	},
+	"13": {
+		"quantidade": 15,
+		"vida": 100,
+		"forca": 10
+	},
+	"14": {
+		"quantidade": 20,
+		"vida": 20,
+		"forca": 15
+	},
+	"15": {
+		"quantidade": 25,
+		"vida": 100,
+		"forca": 10
+	},
+	"16": {
+		"quantidade": 30,
+		"vida": 120,
+		"forca": 15
+	},
+	"17": {
+		"quantidade": 35,
+		"vida": 100,
+		"forca": 10
+	},
+	"18": {
+		"quantidade": 40,
+		"vida": 120,
+		"forca": 15
+	},
+	"19": {
+		"quantidade": 45,
+		"vida": 100,
+		"forca": 10
+	},
+	"20": {
+		"quantidade": 50,
+		"vida": 1200,
+		"forca": 20
+	}
 }

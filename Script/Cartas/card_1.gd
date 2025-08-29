@@ -1,8 +1,6 @@
 extends Sprite2D
 
 @export var spawn_scene: PackedScene  # ex: res://Scene/casa.tscn, torre.tscn etc.
-@onready var collision: CollisionShape2D = $Area/Collision
-@onready var area: Area2D = $Area
 
 var deck: Node2D
 var drag_start_pos: Vector2

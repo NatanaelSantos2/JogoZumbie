@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs24rr88bdwre"]
+
+[ext_resource type="Texture2D" uid="uid://cyb2i623jlxf5" path="res://icon.svg" id="1_mnssj"]
+[ext_resource type="Script" uid="uid://wjtojwl21dr1" path="res://Script/Cartas/card_1.gd" id="2_4nvh8"]
+[ext_resource type="PackedScene" uid="uid://dqp4b66aor6fv" path="res://Scene/torre.tscn" id="3_q5afh"]
+
+[node name="carta1" type="Sprite2D"]
+scale = Vector2(0.2, 0.274)
+texture = ExtResource("1_mnssj")
+script = ExtResource("2_4nvh8")
+spawn_scene = ExtResource("3_q5afh")

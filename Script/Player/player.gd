@@ -56,5 +56,4 @@ func update_target():
 	target = closest
 
 func _on_timer_timeout() -> void:
-	print("Recarga concluída.")
 	raycast.enabled = true

@@ -1,18 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://o5u5psar1s8j"]
+[gd_scene load_steps=3 format=3 uid="uid://o5u5psar1s8j"]
 
 [ext_resource type="Script" uid="uid://541ydmskdud6" path="res://deck.gd" id="1_10lg0"]
-[ext_resource type="Script" uid="uid://wjtojwl21dr1" path="res://Script/Cartas/card_1.gd" id="1_upnkn"]
-[ext_resource type="Texture2D" uid="uid://cyb2i623jlxf5" path="res://icon.svg" id="2_gil0u"]
-[ext_resource type="PackedScene" uid="uid://dqp4b66aor6fv" path="res://Scene/torre.tscn" id="4_4rq2b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt27f"]
-size = Vector2(85.3333, 90.5366)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7g4d"]
-size = Vector2(90, 94.8905)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_10lg0"]
-size = Vector2(90, 98.5403)
+[ext_resource type="Texture2D" uid="uid://cgk1wc6o1j7w3" path="res://alerta1.png" id="5_gil0u"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -28,45 +17,34 @@ grow_vertical = 2
 position = Vector2(153, 162)
 script = ExtResource("1_10lg0")
 
-[node name="carta1" type="Sprite2D" parent="CanvasLayer/Deck"]
-scale = Vector2(0.2, 0.274)
-texture = ExtResource("2_gil0u")
-script = ExtResource("1_upnkn")
-spawn_scene = ExtResource("4_4rq2b")
+[node name="alerta" type="Button" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 12.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5708
+icon = ExtResource("5_gil0u")
+flat = true
 
-[node name="Area" type="Area2D" parent="CanvasLayer/Deck/carta1"]
-
-[node name="Collision" type="CollisionShape2D" parent="CanvasLayer/Deck/carta1/Area"]
-position = Vector2(-4.26666, -1.56094)
-shape = SubResource("RectangleShape2D_tt27f")
-
-[node name="carta2" type="Sprite2D" parent="CanvasLayer/Deck"]
-scale = Vector2(0.2, 0.274)
-texture = ExtResource("2_gil0u")
-script = ExtResource("1_upnkn")
-spawn_scene = ExtResource("4_4rq2b")
-
-[node name="Area" type="Area2D" parent="CanvasLayer/Deck/carta2"]
-
-[node name="Collision" type="CollisionShape2D" parent="CanvasLayer/Deck/carta2/Area"]
-position = Vector2(0.000183105, 0)
-shape = SubResource("RectangleShape2D_r7g4d")
-
-[node name="carta3" type="Sprite2D" parent="CanvasLayer/Deck"]
-scale = Vector2(0.2, 0.274)
-texture = ExtResource("2_gil0u")
-script = ExtResource("1_upnkn")
-spawn_scene = ExtResource("4_4rq2b")
-
-[node name="Area" type="Area2D" parent="CanvasLayer/Deck/carta3"]
-
-[node name="Collision" type="CollisionShape2D" parent="CanvasLayer/Deck/carta3/Area"]
-position = Vector2(6.10352e-05, -1.82489)
-shape = SubResource("RectangleShape2D_10lg0")
-
-[connection signal="area_entered" from="CanvasLayer/Deck/carta1/Area" to="CanvasLayer/Deck/carta1" method="_on_area_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Deck/carta1/Area" to="CanvasLayer/Deck/carta1" method="_on_area_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/Deck/carta2/Area" to="CanvasLayer/Deck/carta2" method="_on_area_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Deck/carta2/Area" to="CanvasLayer/Deck/carta2" method="_on_area_area_exited"]
-[connection signal="area_entered" from="CanvasLayer/Deck/carta3/Area" to="CanvasLayer/Deck/carta3" method="_on_area_area_entered"]
-[connection signal="area_exited" from="CanvasLayer/Deck/carta3/Area" to="CanvasLayer/Deck/carta3" method="_on_area_area_exited"]
+[node name="Label" type="Label" parent="CanvasLayer/alerta"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -13.0
+offset_right = 36.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
